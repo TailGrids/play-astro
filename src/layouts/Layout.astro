@@ -1,0 +1,112 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import BackToTop from '../components/layout/BackToTop.astro';
+import MadeWithButton from '../components/layout/MadeWithButton.astro';
+
+interface Props {
+  description: string;
+  title: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <!-- <Header client:load /> -->
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <BackToTop />
+    <MadeWithButton />
+    <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .sticky-header {
+        @apply fixed z-[9999] bg-white/80 dark:bg-dark/80 transition;
+        backdrop-filter: blur(5px);
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .sticky-header .navbar-logo {
+        @apply py-2;
+      }
+
+      .sticky-header #navbarToggler span {
+        @apply bg-dark dark:bg-white;
+      }
+
+      .sticky-header #navbarCollapse li > a {
+        @apply text-dark dark:text-white hover:text-primary dark:hover:text-primary hover:opacity-100;
+      }
+      #navbarCollapse li .ud-menu-scroll.active {
+        @apply opacity-70;
+      }
+      .sticky-header #navbarCollapse li .ud-menu-scroll.active {
+        @apply text-primary opacity-100;
+      }
+      .sticky-header .loginBtn {
+        @apply text-dark dark:text-white hover:text-primary dark:hover:text-primary hover:opacity-100;
+      }
+
+      .sticky-header .signUpBtn {
+        @apply bg-primary text-white hover:bg-blue-dark hover:text-white;
+      }
+
+      .sticky-header #themeSwitcher span {
+        @apply text-dark dark:text-white;
+      }
+
+      .navbarTogglerActive > span:nth-child(1) {
+        @apply top-[7px] rotate-45 transform;
+      }
+      .navbarTogglerActive > span:nth-child(2) {
+        @apply opacity-0;
+      }
+      .navbarTogglerActive > span:nth-child(3) {
+        @apply top-[-8px] rotate-[135deg];
+      }
+
+      .common-carousel .swiper-button-next:after,
+      .common-carousel .swiper-button-prev:after {
+        @apply hidden;
+      }
+
+      .common-carousel .swiper-button-next,
+      .common-carousel .swiper-button-prev {
+        @apply !static h-12 w-12 rounded-lg bg-white dark:bg-dark shadow-testimonial-btn text-dark dark:text-white m-0 ease-out duration-200 hover:bg-primary hover:text-white hover:shadow-none;
+      }
+
+      .common-carousel .swiper-button-next svg,
+      .common-carousel .swiper-button-prev svg {
+        @apply w-auto h-auto;
+      }
+
+    </style>
+    <script>
+      import "../scripts/stickymenu.js";
+      import "../scripts/dropdown.js";
+      import "../scripts/darkMode.js";
+      import "../scripts/scrolltop.js";
+      import "../scripts/scrollmenu.js";
+      import "../scripts/testimonial.js";
+    </script>
+  </body>
+</html>

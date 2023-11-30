@@ -1,0 +1,52 @@
+---
+const articles = [
+  {image: "/assets/blog/article-author-01.png", title: "Create engaging online courses your student…", author: "Glomiya Lucy"},
+  {image: "/assets/blog/article-author-02.png", title: "The ultimate formula for launching online course", author: "Andrio jeson"},
+  {image: "/assets/blog/article-author-03.png", title: "50 Best web design tips & tricks that will help you", author: "Samoyel Dayno"},
+  {image: "/assets/blog/article-author-04.png", title: "The 8 best landing page builders, reviewed", author: "Andrio Glori"},
+]
+---
+
+<div class="-mx-4 mb-8 flex flex-wrap">
+  <div class="w-full px-4">
+    <h2
+      class="wow fadeInUp relative pb-5 text-2xl font-semibold text-dark dark:text-white sm:text-[28px]"
+      data-wow-delay=".1s"
+    >
+      Popular Articles
+    </h2>
+    <span
+      class="mb-10 inline-block h-[2px] w-20 bg-primary"
+    ></span>
+  </div>
+
+  {articles.map(article => (
+    <div class="w-full px-4 md:w-1/2 lg:w-full">
+      <div
+        class="wow fadeInUp mb-5 flex w-full items-center border-b border-stroke dark:border-dark-3 pb-5"
+        data-wow-delay=".1s"
+      >
+        <div
+          class="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full"
+        >
+          <img
+            src={article.image}
+            alt="image"
+            class="w-full"
+          />
+        </div>
+        <div class="w-full">
+          <h4>
+            <a
+              href="javascript:void(0)"
+              class="mb-1 inline-block text-lg font-medium leading-snug text-dark dark:text-dark-6 hover:text-primary dark:hover:text-primary lg:text-base xl:text-lg"
+            >
+              {article.title}
+            </a>
+          </h4>
+          <p class="text-sm text-body-color dark:text-dark-6">{article.author}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

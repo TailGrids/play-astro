@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+
+// Filter blog entries with 'draft: false' & date before current date
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+
+// Sort content entries by publication date
+publishedBlogEntries.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+---
+
+<div>
+  <div class="-mx-4 flex flex-wrap">
+    <div class="wow fadeInUp mt-14 w-full px-4" data-wow-delay=".2s">
+      <h2
+        class="relative pb-5 text-2xl font-semibold text-dark dark:text-white sm:text-[36px]"
+      >
+        Related Articles
+      </h2>
+      <span class="mb-10 inline-block h-[2px] w-20 bg-primary"></span>
+    </div>
+  </div>
+
+  <ul class="-mx-4 flex flex-wrap">
+    {
+      publishedBlogEntries.map((blogPostEntry, index) => {
+        if(blogPostEntry.data.category === 'related') {
+          return (
+            <li class="w-full px-4 md:w-1/2 lg:w-1/3">
+              <a class="wow fadeInUp group block mb-10" data-wow-delay=".1s" href={`/blog/${blogPostEntry.slug}`}>
+                <div class="mb-8 overflow-hidden rounded-[5px]">
+                  <span class="block">
+                    <img
+                      src={blogPostEntry.data.image.src}
+                      alt={blogPostEntry.data.image.alt}
+                      class="w-full ease-in duration-300 group-hover:rotate-6 group-hover:scale-125"
+                    />
+                  </span>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-4 py-0.5 mb-6 text-xs font-medium leading-loose text-center text-white rounded-[5px] bg-primary"
+                  >
+                    {blogPostEntry.data.publishDate.toDateString()}
+                  </span>
+                  <h3>
+                    <span
+                      class="inline-block mb-4 text-xl font-semibold text-dark dark:text-white hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                    >
+                      {blogPostEntry.data.title}
+                    </span>
+                  </h3>
+                  <p class="max-w-[370px] text-base text-body-color dark:text-dark-6">
+                    {blogPostEntry.data.postDetails.paraOne.slice(0, 100)}
+                  </p>
+                </div>
+              </a>
+            </li>
+          )
+        }
+      })
+    }
+  </ul>
+</div>

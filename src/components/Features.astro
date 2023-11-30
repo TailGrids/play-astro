@@ -1,0 +1,89 @@
+---
+const features = [
+  {
+    icon: 'assets/features/icon-01.svg',
+    title: 'Free and Open-Source',
+    ref: 'javascript:void(0)',
+    refTitle: 'Learn More',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and industry.',
+  },
+  {
+    icon: 'assets/features/icon-02.svg',
+    title: 'Multipurpose Template',
+    ref: 'javascript:void(0)',
+    refTitle: 'Learn More',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and industry.',
+  },
+  {
+    icon: 'assets/features/icon-03.svg',
+    title: 'High-quality Design',
+    ref: 'javascript:void(0)',
+    refTitle: 'Learn More',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and industry.',
+  },
+  {
+    icon: 'assets/features/icon-04.svg',
+    title: 'All Essential Elements',
+    ref: 'javascript:void(0)',
+    refTitle: 'Learn More',
+    description:
+      'Lorem Ipsum is simply dummy text of the printing and industry.',
+  },
+];
+---
+
+<!-- ====== Features Section Start -->
+<section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px] dark:bg-dark">
+  <div class="container">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4">
+        <div class="mb-12 mx-auto max-w-[485px] lg:mb-[70px] text-center">
+          <span class="mb-2 block text-lg font-semibold text-primary">
+            Features
+          </span>
+          <h2 class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            Main Features Of Play
+          </h2>
+          <p class="text-base text-body-color dark:text-dark-6">
+            There are many variations of passages of Lorem Ipsum available
+            but the majority have suffered alteration in some form.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="-mx-4 flex flex-wrap">
+      {
+        features.map((feature) => (
+          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
+            <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+              <div
+                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary"
+              >
+                <span
+                  class="absolute top-0 left-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
+                ></span>
+                <img src={feature.icon} alt="icon" />
+              </div>
+              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+                {feature.title}
+              </h4>
+              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+                {feature.description}
+              </p>
+              <a
+                href={feature.ref}
+                class="text-base font-medium text-dark dark:text-white hover:text-primary dark:hover:text-primary"
+              >
+                {feature.refTitle}
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<!-- ====== Features Section End -->
