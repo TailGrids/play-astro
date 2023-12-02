@@ -1,4 +1,4 @@
-# Play - Free Astro Starter Kit and Template for Startups
+# Play Astro - Free Astro Template for Startups and Blog
 
 Play Astro is a fantastic free and open-source Astro template, specifically designed for startups, SaaS companies, apps, businesses, and more. With its premium design and comprehensive range of essential components and pages, it's your all-in-one solution for launching a full-fledged website.
 
