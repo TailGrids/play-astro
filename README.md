@@ -1,5 +1,4 @@
-# Play Astro - Free Astro Template for Startups and Blog
-
+# Play Astro - Free Astro Template for Startup, SaaS and App Sites
 Play Astro is a fantastic free and open-source Astro template, built for startups, SaaS companies, apps, businesses, and more. With its premium design and comprehensive range of essential components and pages, it's your all-in-one solution for launching a full-fledged website.
 
 ### This template crafted using 🥞 [TailGrids](https://tailgrids.com/) UI components
