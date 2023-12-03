@@ -7,9 +7,10 @@ import MadeWithButton from '../components/layout/MadeWithButton.astro';
 interface Props {
   description: string;
   title: string;
+  image?: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title, image } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -23,6 +24,8 @@ const { description, title } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="twitter:image" content={image} />
     <title>{title}</title>
   </head>
   <body>
