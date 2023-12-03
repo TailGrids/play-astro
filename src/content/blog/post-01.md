@@ -6,7 +6,7 @@ image: {
     src: "/assets/blog/blog-01.jpg",
     alt: "blog details"
 }
-publishDate: "2024-11-08 11:39"
+publishDate: "2023-11-08 11:39"
 category: "related"
 author: "Samuyl Joshi"
 bigImg: {
