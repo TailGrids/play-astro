@@ -1,6 +1,6 @@
 # Play Astro - Free Astro Template for Startups and Blog
 
-Play Astro is a fantastic free and open-source Astro template, specifically designed for startups, SaaS companies, apps, businesses, and more. With its premium design and comprehensive range of essential components and pages, it's your all-in-one solution for launching a full-fledged website.
+Play Astro is a fantastic free and open-source Astro template, built for startups, SaaS companies, apps, businesses, and more. With its premium design and comprehensive range of essential components and pages, it's your all-in-one solution for launching a full-fledged website.
 
 ### ✍️ Awesome Blog with Markdown
 Moreover, it features a functional blog system, powered by Markdown, providing everything you need to operate a complete business website.
